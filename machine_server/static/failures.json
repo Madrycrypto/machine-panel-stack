@@ -1,0 +1,8 @@
+[
+    { "id": 1, "desc": "Brak zasilania / 断电", "severity": "high" },
+    { "id": 2, "desc": "Zacięcie materiału / 卡料", "severity": "medium" },
+    { "id": 3, "desc": "Przegrzanie / 过热", "severity": "medium" },
+    { "id": 4, "desc": "Błąd kalibracji / 校准错误", "severity": "low" },
+    { "id": 5, "desc": "Awaria narzędzia / 刀具故障", "severity": "high" },
+    { "id": 6, "desc": "Problem z czujnikiem / 传感器问题", "severity": "low" }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "desc": "Brak folii",
+        "severity": "low"
+    },
+    {
+        "id": 2,
+        "desc": "Brak kartonów",
+        "severity": "low"
+    },
+    {
+        "id": 3,
+        "desc": "Brak kleju",
+        "severity": "medium"
+    },
+    {
+        "id": 4,
+        "desc": "Brak palet",
+        "severity": "medium"
+    },
+    {
+        "id": 5,
+        "desc": "Brak etykiet",
+        "severity": "low"
+    },
+    {
+        "id": 6,
+        "desc": "Inny brak materiału",
+        "severity": "low"
+    }
+]

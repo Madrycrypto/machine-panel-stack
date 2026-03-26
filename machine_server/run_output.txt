@@ -1,0 +1,18 @@
+Step 1: Importing main...
+Traceback (most recent call last):
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/test_live.py", line 2, in <module>
+    import main
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/main.py", line 4, in <module>
+    from fastapi import FastAPI, Depends, HTTPException, BackgroundTasks
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv/lib/python3.14/site-packages/fastapi/__init__.py", line 7, in <module>
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv/lib/python3.14/site-packages/fastapi/applications.py", line 10, in <module>
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv/lib/python3.14/site-packages/fastapi/routing.py", line 31, in <module>
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv/lib/python3.14/site-packages/anyio/__init__.py", line 5, in <module>
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv/lib/python3.14/site-packages/anyio/_core/_eventloop.py", line 21, in <module>
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 892, in get_code
+  File "<frozen importlib._bootstrap_external>", line 950, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv/lib/python3.14/site-packages/sniffio/__init__.py'

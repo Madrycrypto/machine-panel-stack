@@ -1,0 +1,6 @@
+Sent: {'machine_id': 'OP150', 'worker_id': 'Kacper', 'code': 1, 'action': 'START', 'timestamp': '2026-03-12T10:17:02.224793', 'desc': 'Robot Alarm\\n 机器人警报'}
+Sent: {'machine_id': 'OP150', 'worker_id': 'Kacper', 'code': 1, 'action': 'STOP', 'timestamp': '2026-03-12T10:17:03.881256', 'desc': 'Robot Alarm\\n 机器人警报'}
+Sent: {'machine_id': 'OP150', 'worker_id': 'Kacper', 'code': 1, 'action': 'START', 'timestamp': '2026-03-12T10:17:15.564483', 'desc': 'Robot Alarm\\n 机器人警报'}
+Sent: {'machine_id': 'OP150', 'worker_id': 'Kacper', 'code': 1, 'action': 'STOP', 'timestamp': '2026-03-12T10:17:24.100440', 'desc': 'Robot Alarm\\n 机器人警报'}
+Sent: {'machine_id': 'OP150', 'worker_id': 'Kacper', 'code': 1, 'action': 'START', 'timestamp': '2026-03-12T11:01:16.332295', 'desc': 'Robot Alarm\\n 机器人警报'}
+Sent: {'machine_id': 'OP150', 'worker_id': 'Kacper', 'code': 1, 'action': 'STOP', 'timestamp': '2026-03-12T11:01:32.068159', 'desc': 'Robot Alarm\\n 机器人警报'}

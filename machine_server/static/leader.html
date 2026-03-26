@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Panel Lidera Zmiany</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="leader.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="app-header">
+        <div class="header-info">
+            <h1 class="header-title">📱 Panel Lidera Zmiany</h1>
+            <div class="worker-display">Wybierz maszynę i zgłoś awarię.</div>
+        </div>
+        
+        <div class="header-right">
+            <div class="clock" id="clockDisplay">00:00:00</div>
+            <button id="adminBtn" class="admin-icon-btn">⚙️</button>
+            <button id="logoutBtn" class="logout-btn">Wyloguj</button>
+        </div>
+    </header>
+
+    <div id="mode1Container" class="mode-container">
+        <!-- SPLIT LAYOUT WRAPPER -->
+        <div class="split-layout">
+            <!-- MACHINE SELECTOR -->
+            <section class="machine-selector-section">
+                <h2 class="section-heading">🏭 1. Wybierz Stanowisko:</h2>
+                <div class="machine-grid" id="machineGrid">
+                    <!-- Machine buttons injected via JS -->
+                    <div style="text-align: center; color: #94a3b8; grid-column: 1 / -1; padding: 2rem;">Ładowanie stanowisk...</div>
+                </div>
+            </section>
+
+            <!-- RESIZER GUTTER -->
+            <div class="resizer-gutter" id="resizerGutter"></div>
+    
+            <!-- ERROR REPORTING -->
+            <section class="error-reporting-section" id="errorSection">
+                <h2 class="section-heading">🚨 2. Wybierz rodzaj usterki:</h2>
+                
+                <div class="failures-grid" id="failuresGrid">
+                    <!-- Normal failure buttons injected via JS -->
+                </div>
+            </section>
+        </div>
+    
+        <!-- RESOLVE BUTTON (Fixed at Bottom for Mode 1 - not strictly necessary but kept for Edge Cases) -->
+        <div class="footer-actions" id="footerActionsBlock">
+            <button class="resolve-btn" id="resolveBtn">
+                <span class="icon">✅</span> ZAKOŃCZ AWARIĘ WYBRANEJ MASZYNY
+            </button>
+        </div>
+    </div>
+
+    <!-- MODE 2 CONTAINER (Admin) -->
+    <div id="mode2Container" class="mode-container admin-mode-padding">
+        <h2 style="color: white; margin-bottom: 2rem; text-align: center;">Aktywne Awarie na Linii</h2>
+        <div id="activeAlertsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+            <!-- Rendered via JS -->
+        </div>
+    </div>
+
+    <!-- LOGIN OVERLAY -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-modal">
+            <h2>Wprowadź swoje dane</h2>
+            <p>Identyfikacja Lidera:</p>
+            <input type="text" id="workerIdInput" placeholder="Imię i Nazwisko Lidera" autocomplete="off">
+            <button id="loginBtn">ZALOGUJ</button>
+        </div>
+    </div>
+    
+    <!-- MODE SELECTION OVERLAY -->
+    <div class="login-overlay" id="modeOverlay" style="display: none; z-index: 1000;">
+        <div class="login-modal" style="max-width: 600px;">
+            <h2>Wybierz Tryb Pracy</h2>
+            <p>Jako lider, wybierz funkcję panelu:</p>
+            
+            <div style="display: flex; gap: 20px; margin-top: 2rem;">
+                <button id="btnMode1" style="flex: 1; padding: 2rem; font-size: 1.1rem; background: #334155; border: 2px solid #64748b; border-radius: 12px; cursor: pointer; color: white;">
+                    🏭<br><br>Symulacja Maszyn<br><small style="font-weight:normal; color:#cbd5e1;">Zgłaszaj awarie w imieniu maszyn</small>
+                </button>
+                <button id="btnMode2" style="flex: 1; padding: 2rem; font-size: 1.1rem; background: #334155; border: 2px solid #64748b; border-radius: 12px; cursor: pointer; color: white;">
+                    🚨<br><br>Panel Administracyjny<br><small style="font-weight:normal; color:#cbd5e1;">Zarządzaj i wyłączaj trwające akcje</small>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADMIN OVERLAY -->
+    <div class="admin-overlay" id="adminOverlay" style="display: none;">
+        <div class="admin-modal">
+            <h2>Ustawienia Lidera (Połączenie)</h2>
+            <p style="color: #94a3b8; margin-bottom: 1.5rem; font-size: 0.9rem;">Skonfiguruj adres URL serwera, aby połączyć się z panelem głównym.</p>
+            
+            <div class="input-group">
+                <label for="apiUrlInput">Server URL (np. http://localhost:8000)</label>
+                <input type="text" id="apiUrlInput" placeholder="Server URL">
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-top: 1rem;">
+                <button id="saveAdminBtn" class="save-admin-btn" style="flex: 2;">Zapisz Ustawienia</button>
+                <button id="closeAdminBtn" class="close-admin-btn" style="flex: 1;">Anuluj</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="leader.js"></script>
+</body>
+
+</html>

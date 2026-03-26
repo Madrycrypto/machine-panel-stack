@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Panel Awarii Maszyn</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#1a1a2e">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- SETUP SCREEN DELETED: Machine ID is now managed in Admin Panel -->
+
+    <!-- WORKER LOGIN SCREEN -->
+    <div id="worker-screen" class="screen">
+        <div class="card setup-card" style="position: relative;">
+            <button id="workerAdminBtn" class="btn text-btn"
+                style="position: absolute; top: 10px; right: 10px; color: #94a3b8; font-size: 0.8rem;">⚙️ Admin</button>
+            <h1>👷 Zaloguj Się</h1>
+            <p>Aby rozpocząć pracę na <strong id="workerScreenMachineId">---</strong>, podaj swoje imię.</p>
+            <div class="input-group">
+                <label for="workerNameInput">Imię Pracownika / ID:</label>
+                <input type="text" id="workerNameInput" placeholder="Kacper" autocomplete="off">
+            </div>
+            <button id="startShiftBtn" class="btn primary">Rozpocznij Pracę</button>
+        </div>
+    </div>
+
+    <!-- MAIN DASHBOARD -->
+    <div id="main-screen" class="screen">
+        <header>
+            <div class="header-left">
+                <span class="app-title">👑 Panel Maszyny</span>
+                <div class="live-status">
+                    <span class="live-dot"></span>
+                    <span class="live-text">Live</span>
+                </div>
+                <span class="machine-badge-new" id="displayMachineId">---</span>
+            </div>
+
+            <div class="header-center">
+                <div id="displayDate" class="header-date">---</div>
+                <div id="displayClock" class="header-clock">00:00:00</div>
+            </div>
+
+            <div class="header-right">
+                <div class="worker-info">
+                    <span id="currentWorkerNameDisplay">Nieznany</span>
+                    <button id="logoutWorkerBtn" class="logout-link">Wyloguj</button>
+                </div>
+                <button id="adminBtn" class="admin-gear-btn">⚙️</button>
+            </div>
+        </header>
+
+        <main id="failuresGrid" class="grid">
+            <!-- Buttons injected by JS dynamically -->
+        </main>
+
+        <!-- ACTIVE ALARM OVERLAY (Container for multiple alerts) -->
+        <div id="active-failure-banner" class="hidden banner">
+            <!-- Rows injected by app.js -->
+        </div>
+    </div>
+
+    <!-- ADMIN SCREEN -->
+    <div id="admin-screen" class="screen">
+        <header>
+            <div class="header-info">
+                <span class="machine-badge" style="background: #eab308; color: #000;">Tryb Administratora</span>
+            </div>
+            <button id="closeAdminBtn" class="btn text-btn" style="color: #f8fafc;">Zamknij Panel</button>
+        </header>
+        <main class="admin-main" style="padding: 20px; overflow-y: auto;">
+            <div class="card" style="width: 100%; max-width: 800px; margin: 0 auto;">
+
+                <div
+                    style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #334155; text-align: left;">
+                    <h2 style="color: #38bdf8; margin-bottom: 15px;">Ustawienia Tabletu</h2>
+                    <div class="input-group" style="margin-bottom: 0;">
+                        <label for="adminMachineIdInput">Lokalne ID Maszyny (Stanowisko):</label>
+                        <input type="text" id="adminMachineIdInput" placeholder="np. OP150" autocomplete="off">
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2 style="color: #38bdf8;">Edycja Przycisków Awarii</h2>
+                    <button id="addFailureBtn" class="btn primary" style="width: auto; padding: 0.5rem 1rem;">+ Dodaj
+                        Przycisk</button>
+                </div>
+                <div id="adminFailuresList" style="display: flex; flex-direction: column; gap: 10px;">
+                    <!-- Admin rows injected by JS log -->
+                </div>
+                <button id="saveAdminBtn" class="btn primary"
+                    style="margin-top: 30px; background: linear-gradient(135deg, #16a34a, #15803d);">💾 Zapisz i
+                    Zastosuj Globalnie</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

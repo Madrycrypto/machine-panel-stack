@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "desc": "Robot Alarm\\n 机器人警报",
+        "severity": "low"
+    },
+    {
+        "id": 2,
+        "desc": "Screw Machine\\n 螺丝机",
+        "severity": "low"
+    },
+    {
+        "id": 3,
+        "desc": "Vibration disc...\\n 振动盘...",
+        "severity": "low"
+    },
+    {
+        "id": 4,
+        "desc": "Cy6 Advance Alarm\\n Cy6 高级警报",
+        "severity": "medium"
+    },
+    {
+        "id": 5,
+        "desc": "Pc connection fail\\n 电脑连接失败",
+        "severity": "medium"
+    },
+    {
+        "id": 6,
+        "desc": "Tighten Gun - Timeout\\n 拧紧枪 - 超时",
+        "severity": "medium"
+    },
+    {
+        "id": 7,
+        "desc": "Sucking screw failed\\n 吸盘螺丝失效",
+        "severity": "medium"
+    },
+    {
+        "id": 8,
+        "desc": "Brak srubek\\n 没有螺丝",
+        "severity": "high"
+    },
+    {
+        "id": 9,
+        "desc": "Robot not home\\n 机器人不在家",
+        "severity": "high"
+    },
+    {
+        "id": 10,
+        "desc": "Brak części\\n 缺少部件",
+        "severity": "high"
+    }
+]

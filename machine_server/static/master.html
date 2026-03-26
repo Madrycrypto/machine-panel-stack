@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift Master Panel / 班长看板</title>
+    <link rel="stylesheet" href="master.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header class="master-header">
+        <div class="header-left">
+            <h1>👑 Command Center / 指挥中心</h1>
+            <span class="live-indicator"><span class="dot blink"></span> Live / 直播</span>
+        </div>
+        <div class="header-right" style="display: flex; align-items: center; gap: 1rem;">
+            <div class="header-date" id="masterDate" style="font-size: 1.2rem; color: #94a3b8; font-weight: 500;"></div>
+            <div class="clock" id="masterClock">00:00:00</div>
+            <button id="triggerReportBtn" class="ai-btn-small"
+                style="padding: 0.5rem 1rem; border-radius: 6px; font-size: 1rem; background: linear-gradient(135deg, #0ea5e9, #2563eb); color: white; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; font-weight: bold; margin-left: 1rem;">
+                <span>✨</span><span>AI Report / AI 报告</span>
+            </button>
+            <button id="alarmToggleBtn" class="admin-icon-btn" title="Toggle Sound Alarm / 切换声音警报">🔕</button>
+            <button id="masterAdminBtn" class="admin-icon-btn" title="Admin Settings / 管理员设置">⚙️</button>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <!-- TOP ROW: Stats -->
+        <section class="stats-row" style="grid-template-columns: 1fr;">
+            <div class="stat-card"
+                style="display: flex; flex-direction: row; justify-content: space-around; align-items: center; padding: 1rem;">
+                <div style="text-align: center;">
+                    <h3 style="margin-bottom: 0.5rem;">Total Downtime / 今日总停机时间</h3>
+                    <div class="stat-value" id="totalDowntime">0 <span class="unit">min</span></div>
+                </div>
+                <div style="width: 1px; height: 60px; background: #334155;"></div>
+                <div style="text-align: center;">
+                    <h3 style="margin-bottom: 0.5rem;">Total Faults / 总故障数</h3>
+                    <div class="stat-value" id="totalFaults">---</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MIDDLE ROW: Overview Grid & Chart -->
+        <section class="overview-section">
+            <div class="machine-grid-container">
+                <div class="section-title">
+                    <h2>🏭 Workshop Stations / 车间工位</h2>
+                </div>
+                <div class="machine-overview-grid" id="machineOverviewGrid">
+                    <!-- Machine squares injected by JS -->
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="section-title">
+                    <h2>📉 Top Downtime Today / 今日最高停机 (Top 5)</h2>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="downtimeChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOTTOM ROW: Active Errors -->
+        <section class="active-faults-section">
+            <div class="section-title">
+                <h2>🚨 Active Faults / 当前故障</h2>
+                <span class="badge" id="activeFaultsCount">0 machines / 台机器</span>
+            </div>
+            <div class="faults-grid" id="activeFaultsGrid">
+                <!-- Fault cards injected by JS -->
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    ✅ The production line is running smoothly. / 生产线运行正常。
+                </div>
+            </div>
+        </section>
+    </main>
+    </main>
+
+    <!-- ADMIN OVERLAY -->
+    <div class="admin-overlay" id="adminOverlay" style="display: none;">
+        <div class="admin-modal">
+            <div class="admin-modal-header">
+                <h2>⚙️ Station Config (Admin) / 工位配置</h2>
+                <button id="closeAdminBtn" class="close-btn">&times;</button>
+            </div>
+            <div class="admin-modal-body">
+                <div class="admin-settings-group section-split">
+                    <h3>List of Expected Devices: / 车间预期设备列表：</h3>
+                    <button id="addMachineBtn" class="add-btn">+ Add Machine / 添加机器</button>
+                </div>
+
+                <div id="adminMachinesList" class="admin-list-container">
+                    <!-- JS Injected inputs -->
+                </div>
+
+            </div>
+            <div class="admin-modal-footer">
+                <button id="saveAdminBtn" class="save-btn">Save Changes / 保存更改</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="master.js"></script>
+</body>
+
+</html>

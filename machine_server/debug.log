@@ -1,0 +1,63 @@
+Traceback (most recent call last):
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/bin/uvicorn", line 6, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/click/core.py", line 1485, in __call__
+    return self.main(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/click/core.py", line 1406, in main
+    rv = self.invoke(ctx)
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/uvicorn/main.py", line 433, in main
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/uvicorn/main.py", line 606, in run
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/uvicorn/server.py", line 75, in run
+  File "/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/runners.py", line 204, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/uvicorn/server.py", line 79, in serve
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/uvicorn/server.py", line 86, in _serve
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/uvicorn/config.py", line 441, in load
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/uvicorn/importer.py", line 19, in import_from_string
+  File "/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/main.py", line 64, in <module>
+    @app.post("/api/log")
+     ~~~~~~~~^^^^^^^^^^^^
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/fastapi/routing.py", line 1446, in decorator
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/fastapi/routing.py", line 1382, in add_api_route
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/fastapi/routing.py", line 945, in __init__
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/fastapi/dependencies/utils.py", line 309, in get_dependant
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/fastapi/dependencies/utils.py", line 538, in analyze_param
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/fastapi/utils.py", line 66, in create_model_field
+    if annotation_is_pydantic_v1(type_):
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/fastapi/_compat/shared.py", line 203, in annotation_is_pydantic_v1
+    if is_pydantic_v1_model_class(annotation):
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/fastapi/_compat/shared.py", line 196, in is_pydantic_v1_model_class
+    from pydantic import v1
+  File "/Users/maciejmostowski/Documents/machine-panel-stack/machine_server/venv2/lib/python3.14/site-packages/pydantic/v1/__init__.py", line 9, in <module>
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 892, in get_code
+  File "<frozen importlib._bootstrap_external>", line 951, in get_data
+TimeoutError: [Errno 60] Operation timed out
